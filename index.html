@@ -3,14 +3,25 @@
     <head>
         <link rel="stylesheet" href="./css/index.css">
         <script>
-            function login(userInput){
-                let userPassword = userInput;
+            function login(){
+                //Access input form for password
+                let passwordText = document.getElementById("userInput");
+                let userPassword = passwordText.value;
+                passwordText.value = "";
+                passwordText.value = userPassword;
+                //Access login div
                 let loginDiv = document.querySelector("#LoginDiv");
+                let passwordError = document.querySelector("#PasswordError");
+                passwordError.style.display = "none";
+                //Access Page Selector div
                 let PageSelectorDiv = document.querySelector("#PageSelector");
-                let password = "password";
-                if(userInput == password){
+                let password = "password";//set password
+                if(userPassword == password){
                     loginDiv.style.display = "none";
                     PageSelectorDiv.style.display = "block";
+                }
+                else{
+                    passwordError.style.display = "block";
                 }
             }
         </script>
@@ -18,12 +29,16 @@
     </head>
     <body>
         <div id="LoginDiv" class="Login">
-            <p>Enter password</p>
-            <button id="LoginBtn" onclick="login('password')">Log in</button>
+            <p>Enter your password:</p>
+            <form>
+                Password:<br> <input type="text" id="userInput">
+            </form>
+            <button id="LoginBtn" onclick="login()">Log in</button>
+            <label id="PasswordError" class="Error">Password Incorrect! Please try again.</label>
         </div>
         <div id="PageSelector" class="PageSelector">
-            <button id="BuckridgeBtn" href="file:///C:/Users/Merritt/Desktop/Farm/Farm_Management_System/buckridge.html">Buckridge</button>
-            <button id="NashvilleBtn">Nashville</button>
+            <input type=button id="BuckridgeBtn" onClick="location.href='buckridge.html'" value='Buckridge'>
+            <input type=button id="NashvilleBtn" onClick="location.href='nashville.html'" value='Nashville'>
         </div>
     </body>
 </html>

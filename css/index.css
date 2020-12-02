@@ -5,3 +5,8 @@
 .PageSelector{
     display: none;
 }
+
+.Error{
+    color:red;
+    display: none;
+}

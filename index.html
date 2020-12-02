@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./css/index.css">
+        <script>
+            function login(userInput){
+                let userPassword = userInput;
+                let loginDiv = document.querySelector("#LoginDiv");
+                let PageSelectorDiv = document.querySelector("#PageSelector");
+                let password = "password";
+                if(userInput == password){
+                    loginDiv.style.display = "none";
+                    PageSelectorDiv.style.display = "block";
+                }
+            }
+        </script>
+        <h1>Farm Mangement System</h1>
+    </head>
+    <body>
+        <div id="LoginDiv" class="Login">
+            <p>Enter password</p>
+            <button id="LoginBtn" onclick="login('password')">Log in</button>
+        </div>
+        <div id="PageSelector" class="PageSelector">
+            <button id="BuckridgeBtn" href="file:///C:/Users/Merritt/Desktop/Farm/Farm_Management_System/buckridge.html">Buckridge</button>
+            <button id="NashvilleBtn">Nashville</button>
+        </div>
+    </body>
+</html>
